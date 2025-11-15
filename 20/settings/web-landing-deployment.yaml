@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-landing
+  namespace: webserver
+  labels:
+    app: web-landing
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-landing
+  template:
+    metadata:
+      labels:
+        app: web-landing
+    spec:
+      containers:
+      - name: nginx
+        image: registry.ocp4.example.com:8443/redhattraining/hello-world-nginx:v1.0
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        volumeMounts:
+        - name: web-content
+          mountPath: /usr/share/nginx/html
+          readOnly: true
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
+      volumes:
+      - name: web-content
+        persistentVolumeClaim:
+          claimName: web-pvc

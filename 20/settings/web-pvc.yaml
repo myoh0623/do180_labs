@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-pvc
+  namespace: webserver
+spec:
+  accessModes:
+    - ReadOnlyMany
+  storageClassName: ""  # 동적 프로비저닝 비활성화하여 수동 PV 사용
+  volumeName: web-pv    # 특정 PV 지정
+  resources:
+    requests:
+      storage: 1Gi
