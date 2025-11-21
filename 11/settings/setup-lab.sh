@@ -84,7 +84,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: registry.redhat.io/rhel8/mysql-80:latest
+        image: quay.io/sclorg/mysql-80-c9s
         ports:
         - containerPort: 3306
           name: mysql
