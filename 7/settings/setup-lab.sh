@@ -94,7 +94,7 @@ spec:
     spec:
       containers:
       - name: titan
-        image: registry.redhat.io/ubi8/httpd-24:latest
+        image: registry.access.redhat.com/ubi8/httpd-24:latest
         ports:
         - containerPort: 8080
           name: http
