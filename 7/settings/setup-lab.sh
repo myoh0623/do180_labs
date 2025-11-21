@@ -105,18 +105,6 @@ spec:
           limits:
             cpu: 250m
             memory: 128Mi
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 20
 EOF
     
     echo "  ✓ titan 애플리케이션 배포됨 (리소스 요청: 50m CPU, 64Mi Memory)"
