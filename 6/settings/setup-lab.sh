@@ -64,7 +64,7 @@ if oc get deployment jet &>/dev/null; then
     echo "  ⚠ jet deployment가 이미 존재합니다. (현재 레플리카: $CURRENT_REPLICAS)"
 else
     # Red Hat Universal Base Image with httpd를 사용하여 jet 애플리케이션 생성
-    oc create deployment jet --image=registry.redhat.io/ubi8/httpd-24:latest
+    oc create deployment jet --image=registry.access.redhat.com/ubi8/httpd-24
     
     # deployment가 생성될 때까지 잠시 대기
     echo "  - deployment 생성 대기 중..."
