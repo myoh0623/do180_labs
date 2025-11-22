@@ -189,9 +189,11 @@ spec:
       containers:
       - name: web
         image: registry.redhat.io/ubi8/httpd-24:1-161
+        env:
+        - name: HTTPD_DOCUMENT_ROOT
+          value: /messages
         ports:
         - containerPort: 8080
-          protocol: TCP
         resources:
           requests:
             memory: "128Mi"
