@@ -188,7 +188,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: registry.redhat.io/ubi8/httpd-24:1-161
+        image: registry.access.redhat.com/ubi8/httpd-24
         env:
         - name: HTTPD_DOCUMENT_ROOT
           value: /messages
