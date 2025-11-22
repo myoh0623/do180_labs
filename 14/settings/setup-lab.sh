@@ -239,9 +239,9 @@ EOF
 print_success "web Service가 생성되었습니다."
 
 # Deployment 롤아웃 완료 대기
-print_header "Deployment 준비 상태 대기"
-echo "web Deployment 롤아웃 완료를 기다리는 중..."
-oc rollout status deployment/web --timeout=120s
+print_header "Deployment 생성 완료"
+print_warning "web Deployment는 ConfigMap을 마운트하기 전까지 Ready되지 않을 수 있습니다."
+print_success "Lab 14 실습 환경 구성이 완료되었습니다!"
 
 # Pod 실행 상태 확인
 echo "Pod 실행 상태 확인 중..."
