@@ -276,15 +276,4 @@ echo
 # 실습 준비 완료 안내
 print_header "실습 준비 완료"
 print_success "Lab 14 환경 구성이 완료되었습니다!"
-echo
-echo -e "${YELLOW}다음 단계:${NC}"
-echo "1. 소스 파일 확인: cat $WEB_DIR/index.html"
-echo "2. ConfigMap 생성: oc create configmap web-cm --from-file=$WEB_DIR/index.html"
-echo "3. 볼륨 마운트: oc set volume deployment/web --add --type=configmap --configmap-name=web-cm --mount-path=/messages"
-echo "4. 결과 확인: oc exec deployment/web -- cat /messages/index.html"
-echo
-echo -e "${BLUE}실습 가이드:${NC} README.md 파일을 참조하세요."
-echo -e "${BLUE}정리 명령:${NC} ./cleanup-lab.sh"
-echo
-
 print_success "Lab 14 실습을 시작하세요!"
