@@ -189,9 +189,6 @@ spec:
       containers:
       - name: web
         image: registry.access.redhat.com/ubi8/httpd-24
-        env:
-        - name: HTTPD_DOCUMENT_ROOT
-          value: /messages
         ports:
         - containerPort: 8080
         resources:
@@ -201,18 +198,6 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "100m"
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 20
 EOF
 
 print_success "web Deployment가 생성되었습니다."
